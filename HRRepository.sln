@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRRepository", "HRRepositor
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbScripts", "DbScripts", "{A52A047D-7816-40DF-850F-8AB7630E703D}"
 	ProjectSection(SolutionItems) = preProject
+		..\database.bak = ..\database.bak
 		db.sql = db.sql
 	EndProjectSection
 EndProject
