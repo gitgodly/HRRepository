@@ -22,6 +22,7 @@ namespace HRRepository.Models
             using (var con = new SqlConnection(DbContext.GetConnectionString()))
             {
                 var cmd = new SqlCommand("EmployeesSelect", con);
+                con.Open();
                 var dreader = cmd.ExecuteReader();
                 if(dreader.HasRows)
                 {
@@ -38,6 +39,22 @@ namespace HRRepository.Models
                 }
             }
             return Employees;
+        }
+
+        public bool SaveEmployee()
+        {
+            using (var con = new SqlConnection(DbContext.GetConnectionString()))
+            {
+                var cmd = new SqlCommand("EmployeesInsert", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@FullName", FullName);
+                cmd.Parameters.AddWithValue("@Gender", Gender);
+                cmd.Parameters.AddWithValue("@AGE", Age);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+
         }
 
     }

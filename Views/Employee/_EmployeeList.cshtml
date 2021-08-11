@@ -1,0 +1,23 @@
+﻿@model List<HRRepository.Models.Employee>
+<section>
+    <h5>Employees</h5>
+
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Employee Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.FullName</td>
+                <td>@item.Gender</td>
+                <td>@item.Age</td>
+            </tr>
+        }
+    </table>
+
+</section>

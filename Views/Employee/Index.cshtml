@@ -1,5 +1,34 @@
-﻿@{
+﻿@using HRRepository.Models
+@model List<Employee>
+
+@{
     ViewBag.Title = "Employees ";
 }
 
+<section>
+    <table class="table">
+        <tr>
 
+            <td>
+                Employee Name
+                <input type="text" class="form-control" id="name" />
+            </td>
+            <td>
+                Gender
+                <input type="text" class="form-control" id="gender" />
+            </td>
+            <td>
+                Age
+                <input type="number" class="form-control" id="age" />
+            </td>
+            <td>&nbsp;<br /><input onclick="save();" class="btn btn-danger" type="button" value="Save" /></td>
+        </tr>
+    </table>
+</section>
+<hr />
+<div id="emplist">
+    @{
+        Html.RenderPartial("_EmployeeList", Model);
+    }
+</div>
+<script src="~/Scripts/employee.js"></script>
